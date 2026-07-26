@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pranav | Personal Portfolio</title>
+    <meta name="description" content="A clean and modern personal portfolio website built with HTML, Tailwind CSS, and JavaScript." />
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              accent: '#2563eb',
+              soft: '#f8fafc'
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 transition-colors duration-300 dark:bg-slate-900 dark:text-slate-100">
+    <!-- Simple loading screen -->
+    <div id="loading" class="loading-screen">
+      <div class="spinner"></div>
+      <p class="mt-4 text-sm uppercase tracking-[0.3em] text-slate-500">Loading portfolio...</p>
+    </div>
+
+    <!-- Sticky navigation bar -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/80">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" class="text-lg font-semibold tracking-wide text-slate-800 dark:text-slate-100">Pranav</a>
+
+        <div class="flex flex-wrap items-center gap-2 text-sm sm:gap-4">
+          <a href="#home" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">Home</a>
+          <a href="#about" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">About Me</a>
+          <a href="#interests" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">Interests</a>
+          <a href="#aim" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">Aim</a>
+          <a href="#skills" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">Skills</a>
+          <a href="#contact" class="nav-link rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-800">Contact Me</a>
+          <button id="themeToggle" class="rounded-full border border-slate-300 bg-white p-2 text-slate-700 shadow-sm transition hover:scale-105 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home section -->
+      <section id="home" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="grid items-center gap-12 rounded-[2rem] border border-slate-200 bg-white/70 p-8 shadow-xl shadow-slate-200/60 backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800/70 dark:shadow-slate-950/30 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+          <div class="fade-in">
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Welcome to my portfolio</p>
+            <h1 class="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              Hi, I'm <span class="text-blue-600">Pranav</span>
+            </h1>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+              I’m a <span id="typingText" class="font-semibold text-slate-900 dark:text-white"></span>
+            </p>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
+              I enjoy building useful digital experiences, learning new technologies, and turning ideas into simple, modern solutions.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#about" class="rounded-full bg-blue-600 px-6 py-3 font-medium text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-1 hover:bg-blue-700">About Me</a>
+              <a href="#interests" class="rounded-full border border-slate-300 bg-white px-6 py-3 font-medium text-slate-700 transition hover:-translate-y-1 hover:border-blue-500 hover:text-blue-600 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">My Interests</a>
+              <a href="#contact" class="rounded-full border border-slate-300 bg-white px-6 py-3 font-medium text-slate-700 transition hover:-translate-y-1 hover:border-blue-500 hover:text-blue-600 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="fade-in flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 blur-2xl opacity-40"></div>
+              <img src="https://scontent.fbwa8-1.fna.fbcdn.net/v/t39.30808-6/434683810_1524403285082731_3969696068391043721_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1620x1620&ctp=s1620x1620&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CoLgQUc7cBcQ7kNvwFsuiFU&_nc_oc=AdpyGrJ68F59gOnShvM4NMMry6WJ83Z0HKsKPRkZdIND1369EWWXlln2DtVUM8mBIR4mddScLCVxr-1e7IBxQylH&_nc_zt=23&_nc_ht=scontent.fbwa8-1.fna&_nc_gid=rZT2-dmlr5T6KUY5FLbDfg&_nc_ss=7b2a8&oh=00_AQB7CB49CjJ9pw-Qj83MXwGlyUsDw9IBX1oBJdck3LZ1xQ&oe=6A6BEF36" alt="Profile photo" class="relative h-72 w-72 rounded-full border-8 border-white object-cover shadow-2xl dark:border-slate-700" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me section -->
+      <section id="about" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="fade-in rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60 dark:border-slate-700 dark:bg-slate-800 dark:shadow-slate-950/20 lg:p-12">
+          <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">About Me</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">A little about who I am</h2>
+          </div>
+
+          <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <h3 class="text-xl font-semibold">Biography</h3>
+              <p class="mt-3 leading-8 text-slate-600 dark:text-slate-300">
+                I am a curious and motivated learner who enjoys building creative projects and improving my skills every day. I focus on writing clean code and making websites that are both useful and visually appealing.
+              </p>
+
+              <div class="mt-8 grid gap-6 sm:grid-cols-2">
+                <div class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-700/60">
+                  <h4 class="font-semibold">Education</h4>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Studying modern web development and computer science fundamentals.</p>
+                </div>
+                <div class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-700/60">
+                  <h4 class="font-semibold">Current Studies</h4>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Learning HTML, CSS, JavaScript, and practical design skills.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 p-6 dark:from-slate-700 dark:to-slate-800">
+              <h3 class="text-xl font-semibold">Personal Facts</h3>
+              <ul class="mt-4 space-y-3 text-slate-600 dark:text-slate-300">
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-600"></i> Friendly and easy to work with</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-600"></i> Enjoys problem-solving and learning</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-600"></i> Interested in technology and innovation</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-600"></i> Loves building small projects with purpose</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests section -->
+      <section id="interests" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="fade-in">
+          <div class="mb-8 text-center">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Interests</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Things I enjoy and explore</h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-code text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Coding</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Creating websites and simple tools that solve real problems.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-microchip text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Technology</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Exploring new tools, devices, and digital experiences.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-robot text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">AI</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Learning how intelligent systems can make life easier.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-book text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Reading</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Enjoying ideas that expand thinking and creativity.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-music text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Music</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Finding inspiration and energy through sound.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-dumbbell text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Sports</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Keeping active and building discipline and focus.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-camera text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Photography</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Capturing moments and discovering new perspectives.</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+              <i class="fa-solid fa-plane text-3xl text-blue-600"></i>
+              <h3 class="mt-4 text-lg font-semibold">Traveling</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Learning from different cultures and exploring new places.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aim section -->
+      <section id="aim" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="fade-in rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 text-white shadow-xl shadow-blue-500/20 lg:p-12">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-100">My Aim</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Building a strong future in software development</h2>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-blue-50">
+            My goal is to become a skilled software developer, keep learning modern technologies, and build meaningful applications that make a difference. I want to grow through real projects, teamwork, and constant improvement.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills section -->
+      <section id="skills" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="fade-in rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60 dark:border-slate-700 dark:bg-slate-800 dark:shadow-slate-950/20 lg:p-12">
+          <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Skills</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">What I’m working on</h2>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2">
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">HTML</span>
+                <span class="text-sm text-slate-500">90%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[90%] rounded-full bg-blue-600"></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">CSS</span>
+                <span class="text-sm text-slate-500">85%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[85%] rounded-full bg-cyan-500"></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">Tailwind CSS</span>
+                <span class="text-sm text-slate-500">80%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[80%] rounded-full bg-sky-500"></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">JavaScript</span>
+                <span class="text-sm text-slate-500">75%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[75%] rounded-full bg-amber-500"></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">Git</span>
+                <span class="text-sm text-slate-500">70%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[70%] rounded-full bg-emerald-600"></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4 flex items-center justify-between">
+                <span class="font-medium">GitHub</span>
+                <span class="text-sm text-slate-500">78%</span>
+              </div>
+              <div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                <div class="h-3 w-[78%] rounded-full bg-violet-600"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contact" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="fade-in grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60 dark:border-slate-700 dark:bg-slate-800 dark:shadow-slate-950/20 lg:grid-cols-[0.9fr_1.1fr] lg:p-12">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Contact Me</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Let’s connect</h2>
+            <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              I’m always open to new ideas, feedback, and opportunities. Feel free to reach out anytime.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-700/60">
+                <i class="fa-solid fa-envelope text-blue-600"></i>
+                <span>pranav@example.com</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-700/60">
+                <i class="fa-solid fa-phone text-blue-600"></i>
+                <span>+91 98765 43210</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-700/60">
+                <i class="fa-solid fa-location-dot text-blue-600"></i>
+                <span>India</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-700/60">
+                <i class="fa-brands fa-github text-blue-600"></i>
+                <a href="https://github.com" target="_blank" rel="noreferrer" class="hover:text-blue-600">GitHub</a>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-700/60">
+                <i class="fa-brands fa-linkedin text-blue-600"></i>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="hover:text-blue-600">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm" class="space-y-4 rounded-2xl bg-slate-50 p-6 dark:bg-slate-700/60">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-medium">Name</label>
+              <input id="name" name="name" type="text" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-500 dark:border-slate-600 dark:bg-slate-800" />
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+              <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-500 dark:border-slate-600 dark:bg-slate-800" />
+            </div>
+            <div>
+              <label for="message" class="mb-2 block text-sm font-medium">Message</label>
+              <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-500 dark:border-slate-600 dark:bg-slate-800"></textarea>
+            </div>
+            <button type="submit" class="rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700">Send Message</button>
+            <p id="formMessage" class="text-sm text-emerald-600"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white/80 py-8 dark:border-slate-700 dark:bg-slate-900/80">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-slate-600 dark:text-slate-300 sm:px-6 lg:flex-row lg:px-8">
+        <p>© 2026 Pranav. All rights reserved.</p>
+        <div class="flex gap-4 text-lg">
+          <a href="https://github.com" target="_blank" rel="noreferrer" class="transition hover:text-blue-600"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="transition hover:text-blue-600"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="transition hover:text-blue-600"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>Made with <span class="text-rose-500">❤️</span></p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top fixed bottom-6 right-6 rounded-full bg-blue-600 p-4 text-white shadow-lg transition hover:bg-blue-700">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
