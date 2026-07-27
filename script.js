@@ -28,7 +28,7 @@ themeToggle.addEventListener('click', () => {
 
 // Typing animation for the hero text
 const typingText = document.getElementById('typingText');
-const words = ['Web Developer', 'Learner', 'Problem Solver', 'Creative Coder'];
+const words = ['Scientist', 'Learner', 'Problem Solver', 'Innovator', 'Explorer'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
